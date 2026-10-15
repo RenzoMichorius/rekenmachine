@@ -1,0 +1,20 @@
+import streamlit as st
+import rekentool_b
+st.title("tegelzetter rekentool")
+lengte_bouwplaats = st.number_input("lengte bouwplaats? ", value=5.0)
+breedte_bouwplaats = st.number_input("breedte bouwplaats? ", value=5.0)
+lengte_tegel = st.number_input("lengte tegel? ", value=30.0)
+breedte_tegel = st.number_input("breedte tegel? ", value=60.0)
+snijverlies = st.number_input("snijverlies in procenten? ", value=5.0)
+m2_bouwplaats,m2_tegels,aantal_tegels,extra_tegels,totaal = rekentool_b.berekeningen(lengte_bouwplaats, breedte_bouwplaats,lengte_tegel,breedte_tegel,snijverlies)
+
+st.write("lengte bouwplaats",lengte_bouwplaats)
+st.write("breedte bouwplaats",breedte_bouwplaats)
+st.write("lengte tegel",lengte_tegel)
+st.write("breedte tegel",breedte_tegel)
+st.write("snijverlies in procenten",snijverlies)
+st.write("bouwplaats",m2_bouwplaats)
+st.write("tegels",m2_tegels)
+st.write("aantal tegels",aantal_tegels)
+st.write("extra tegels",extra_tegels)
+st.write("totaal",totaal)
